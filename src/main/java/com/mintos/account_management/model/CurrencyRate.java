@@ -1,0 +1,22 @@
+package com.mintos.account_management.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "am_currency_rates")
+public class CurrencyRate extends BaseEntity {
+
+    private Currency fromCurrency;
+    private Currency toCurrency;
+    private BigDecimal rate;
+
+}
