@@ -91,7 +91,7 @@ The application has two predefined clients with static IDs:
 The application supports following currencies:
 - USD (US Dollar)
 - EUR (Euro)
-- GBP (British Pound)
+- CAD (Canadian Dollar)
 - JPY (Japanese Yen)
 
 ## Database Migration
