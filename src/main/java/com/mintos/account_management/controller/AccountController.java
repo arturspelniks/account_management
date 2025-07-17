@@ -30,7 +30,7 @@ public class AccountController {
     @GetMapping("/accounts/{accountId}/transactions")
     public List<TransactionDto> getTransactions(
             @PathVariable Long accountId,
-            @RequestParam(defaultValue = "0") int offset,
+            @RequestParam(defaultValue = "0") @Min(0) int offset,
             @RequestParam(defaultValue = "25") @Min(1) int limit) {
         return transactionService.getTransactions(accountId, offset, limit);
     }
