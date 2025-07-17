@@ -94,7 +94,7 @@ Flyway is used for DB schema versioning. Migration scripts are in `src/main/reso
 ## Available Clients
 The application has two predefined clients with static IDs:
 - **Alice**: ID 1
-- **Bob**: ID 1
+- **Bob**: ID 2
 
 ## Supported Currencies
 The application supports following currencies:
