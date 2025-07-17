@@ -7,7 +7,7 @@
 
 ### 1. Clone the repository
 ```
-git clone <repo-url>
+git clone https://github.com/arturspelniks/account_management.git
 cd account_management
 ```
 
@@ -20,9 +20,9 @@ The service will start on [http://localhost:8080](http://localhost:8080).
 ### 3. API Endpoints
 
 #### 1. List accounts for a client
-- **Endpoint:** `GET /clients/{clientId}/accounts`
+- **Endpoint:** `GET /api/clients/{clientId}/accounts`
 - **Request Example:**
-  - `GET /clients/1/accounts`
+  - `GET /api/clients/1/accounts`
 - **Response Example:**
 ```json
 [
@@ -40,9 +40,9 @@ The service will start on [http://localhost:8080](http://localhost:8080).
 ```
 
 #### 2. List transactions for an account (paged)
-- **Endpoint:** `GET /accounts/{accountId}/transactions?offset=0&limit=10`
+- **Endpoint:** `GET /api/accounts/{accountId}/transactions?offset={offset}&limit={limit}`
 - **Request Example:**
-  - `GET /accounts/10/transactions?offset=0&limit=2`
+  - `GET /api/accounts/10/transactions?offset=0&limit=2`
 - **Response Example:**
 ```json
 [
@@ -62,7 +62,7 @@ The service will start on [http://localhost:8080](http://localhost:8080).
 ```
 
 #### 3. Transfer funds between accounts
-- **Endpoint:** `POST /accounts/transfer`
+- **Endpoint:** `POST /api/accounts/transfer`
 - **Request Example:**
 ```json
 {
@@ -82,15 +82,6 @@ Response is empty on success.
 }
 ```
 
-## Database Migration
-Flyway is used for DB schema versioning. Migration scripts are in `src/main/resources/db/migration/`.
-
-## Notes
-- Currency rates are fetched from https://api.currencyapi.com/v3/latest
-- API key is required for currency conversion API call and is stored in `application.properties` as `currency-api.apikey`
-- The app is resilient to external currency API failures: currencies are periodically cached in the database as well as initialized with default rates
-- Application uses in-memory H2 DB
-
 ## Available Clients
 The application has two predefined clients with static IDs:
 - **Alice**: ID 1
@@ -102,3 +93,13 @@ The application supports following currencies:
 - EUR (Euro)
 - GBP (British Pound)
 - JPY (Japanese Yen)
+
+## Database Migration
+Flyway is used for DB schema versioning. Migration scripts are in `src/main/resources/db/migration/`.
+
+## Notes
+- Currency rates are fetched from https://api.currencyapi.com/v3/latest
+- API key is required for currency conversion API call and is stored in `application.properties` as `currency-api.apikey`
+- The app is resilient to external currency API failures: currencies are periodically cached in the database as well as initialized with default rates
+- Application uses in-memory H2 DB
+- 
