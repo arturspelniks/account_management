@@ -101,5 +101,4 @@ Flyway is used for DB schema versioning. Migration scripts are in `src/main/reso
 - Currency rates are fetched from https://api.currencyapi.com/v3/latest
 - API key is required for currency conversion API call and is stored in `application.properties` as `currency-api.apikey`
 - The app is resilient to external currency API failures: currencies are periodically cached in the database as well as initialized with default rates
-- Application uses in-memory H2 DB
-- 
+- Application uses in-memory H2 DB, hence no additional database setup is required and your data will be lost on restart
