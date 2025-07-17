@@ -8,12 +8,12 @@
 ### 1. Clone the repository
 ```
 git clone <repo-url>
-cd account-management
+cd account_management
 ```
 
 ### 2. Run the JAR file
 ```
-java -jar target/account-management-0.0.1-SNAPSHOT.jar
+java -jar account-management-0.0.1-SNAPSHOT.jar
 ```
 The service will start on [http://localhost:8080](http://localhost:8080).
 
@@ -90,6 +90,11 @@ Flyway is used for DB schema versioning. Migration scripts are in `src/main/reso
 - API key is required for currency conversion API call and is stored in `application.properties` as `currency-api.apikey`
 - The app is resilient to external currency API failures: currencies are periodically cached in the database as well as initialized with default rates
 - Application uses in-memory H2 DB
+
+## Available Clients
+The application has two predefined clients with static IDs:
+- **Alice**: ID 1
+- **Bob**: ID 1
 
 ## Supported Currencies
 The application supports following currencies:

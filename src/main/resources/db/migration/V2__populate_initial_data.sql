@@ -1,6 +1,6 @@
-INSERT INTO am_clients (name) VALUES
-  ('Alice'),
-  ('Bob');
+INSERT INTO am_clients (id, name) VALUES
+  (1, 'Alice'),
+  (2, 'Bob');
 
 INSERT INTO am_accounts (client_id, currency, balance) VALUES
   (1, 'EUR', 1000.00),
